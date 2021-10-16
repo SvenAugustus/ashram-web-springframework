@@ -95,6 +95,7 @@
     <module>02-mvc/springboot-error-page</module>
     <module>02-mvc/springboot-swagger</module>
     <module>02-mvc/springboot-http-cache</module>
+    <module>02-mvc/springboot-jsp</module>
     <!-- webflux -->
     <module>03-webflux/springboot-sample-webflux</module>
     <!-- sql -->

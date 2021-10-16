@@ -1,0 +1,15 @@
+spring:
+  application:
+    name: spring-boot2-jsp
+
+  mvc:
+    view:
+      prefix: /WEB-INF/jsp/
+      suffix: .jsp
+
+# server
+server:
+  #  port: 80
+  port: 9099
+  servlet:
+    context-path: /
