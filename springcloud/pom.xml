@@ -1,0 +1,196 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--
+  ~ MIT License
+  ~
+  ~ Copyright (c) 2020 SvenAugustus
+  ~
+  ~ Permission is hereby granted, free of charge, to any person obtaining a copy
+  ~ of this software and associated documentation files (the "Software"), to deal
+  ~ in the Software without restriction, including without limitation the rights
+  ~ to use, copy, modify, merge, publish, distribute, sublicense, and/or sell
+  ~ copies of the Software, and to permit persons to whom the Software is
+  ~ furnished to do so, subject to the following conditions:
+  ~
+  ~ The above copyright notice and this permission notice shall be included in all
+  ~ copies or substantial portions of the Software.
+  ~
+  ~ THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
+  ~ IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
+  ~ FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE
+  ~ AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
+  ~ LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
+  ~ OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
+  ~ SOFTWARE.
+  -->
+<project xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+  xmlns="http://maven.apache.org/POM/4.0.0"
+  xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+  <modelVersion>4.0.0</modelVersion>
+  <groupId>xyz.flysium.springcloud</groupId>
+  <artifactId>springcloud-bucket-pom</artifactId>
+  <version>1.0.0-SNAPSHOT</version>
+  <packaging>pom</packaging>
+  <name>SpringCloud bucket POM</name>
+  <description>Parent pom of Spring SpringCloud Bucket.</description>
+  <url>https://github.com/SvenAugustus/springcloud-bucket</url>
+  <inceptionYear>2020</inceptionYear>
+  <licenses>
+    <license>
+      <name>The Apache License V2</name>
+      <url>http://www.apache.org/licenses/LICENSE-2.0.txt</url>
+      <distribution>repo</distribution>
+    </license>
+  </licenses>
+
+  <scm>
+    <tag>master</tag><!-- <tag>v${project.version}</tag> -->
+    <url>git@github.com:SvenAugustus/springcloud-bucket.git</url>
+    <connection>scm:git@github.com:SvenAugustus/springcloud-bucket.git</connection>
+    <developerConnection>scm:git@github.com:SvenAugustus/springcloud-bucket.git
+    </developerConnection>
+  </scm>
+
+  <issueManagement>
+    <system>GitHub Issues</system>
+    <url>https://github.com/SvenAugustus/springcloud-bucket/issues</url>
+  </issueManagement>
+
+  <developers>
+    <developer>
+      <name>SvenAugustus</name>
+      <email>svenaugustus@outlook.com</email>
+      <organization>Flysium-IO</organization>
+      <timezone>+8</timezone>
+    </developer>
+  </developers>
+
+  <properties>
+    <java.version>1.8</java.version>
+    <!--               Spring Technologies            -->
+    <!-- Spring Boot -->
+    <spring-boot.version>2.3.9.RELEASE</spring-boot.version>
+    <!-- Spring Cloud -->
+    <spring-cloud.version>Hoxton.SR10</spring-cloud.version>
+    <!-- Spring Cloud Alibaba -->
+    <spring-cloud-alibaba.version>2.2.4.RELEASE</spring-cloud-alibaba.version>
+    <spring-cloud-alibaba-seata.version>2.2.0.RELEASE</spring-cloud-alibaba-seata.version>
+    <!-- Spring Cloud Netflix -->
+    <spring-cloud-netflix.version>2.2.7.RELEASE</spring-cloud-netflix.version>
+    <!-- Spring Cloud Zookeeper -->
+    <spring-cloud-zookeeper.version>2.2.4.RELEASE</spring-cloud-zookeeper.version>
+    <!-- Spring Cloud Consul -->
+    <spring-cloud-consul.version>2.2.6.RELEASE</spring-cloud-consul.version>
+    <!-- REST Support -->
+    <resteasy.version>3.0.19.Final</resteasy.version>
+    <!--               Spring Extend Technologies            -->
+    <!-- admin-server -->
+    <de.codecentric-spring-cloud-admin-server.version>2.3.1
+    </de.codecentric-spring-cloud-admin-server.version>
+    <!--               Database Technologies            -->
+    <mybatis-spring-boot-starter.version>2.1.4</mybatis-spring-boot-starter.version>
+  </properties>
+
+  <dependencyManagement>
+    <dependencies>
+      <dependency>
+        <!-- Import dependency management from Spring Boot -->
+        <groupId>org.springframework.boot</groupId>
+        <artifactId>spring-boot-dependencies</artifactId>
+        <version>${spring-boot.version}</version>
+        <type>pom</type>
+        <scope>import</scope>
+      </dependency>
+      <dependency>
+        <!-- Import dependency management from Spring Cloud -->
+        <groupId>org.springframework.cloud</groupId>
+        <artifactId>spring-cloud-dependencies</artifactId>
+        <version>${spring-cloud.version}</version>
+        <type>pom</type>
+        <scope>import</scope>
+      </dependency>
+      <dependency>
+        <!-- Import dependency management from Spring Cloud Alibaba -->
+        <groupId>com.alibaba.cloud</groupId>
+        <artifactId>spring-cloud-alibaba-dependencies</artifactId>
+        <version>${spring-cloud-alibaba.version}</version>
+        <type>pom</type>
+        <scope>import</scope>
+      </dependency>
+    </dependencies>
+  </dependencyManagement>
+
+  <build>
+    <pluginManagement>
+      <plugins>
+        <plugin>
+          <groupId>org.apache.maven.plugins</groupId>
+          <artifactId>maven-compiler-plugin</artifactId>
+          <version>3.3</version>
+          <configuration>
+            <source>${java.version}</source>
+            <target>${java.version}</target>
+            <encoding>UTF-8</encoding>
+          </configuration>
+        </plugin>
+        <!-- Package as an executable jar -->
+        <plugin>
+          <groupId>org.springframework.boot</groupId>
+          <artifactId>spring-boot-maven-plugin</artifactId>
+          <version>${spring-boot.version}</version>
+          <executions>
+            <execution>
+              <goals>
+                <goal>repackage</goal>
+              </goals>
+            </execution>
+          </executions>
+        </plugin>
+      </plugins>
+    </pluginManagement>
+    <plugins>
+      <plugin>
+        <groupId>org.codehaus.mojo</groupId>
+        <artifactId>versions-maven-plugin</artifactId>
+        <version>2.2</version>
+      </plugin>
+    </plugins>
+  </build>
+
+  <modules>
+    <module>01-discovery/eureka-server</module>
+    <module>01-discovery/discovery-service-provider</module>
+    <module>01-discovery/discovery-service-consumer</module>
+    <module>03-load-balancing/loadbalance-ribbon-sample-provider</module>
+    <module>03-load-balancing/loadbalance-ribbon-consumer-resttemplate</module>
+    <module>03-load-balancing/loadbalance-ribbon-consumer-feign</module>
+    <module>04-circuit-breaker/circuit-breaker-hystrix-0-start</module>
+    <module>04-circuit-breaker/circuit-breaker-hystrix-sample-provider</module>
+    <module>04-circuit-breaker/circuit-breaker-hystrix-sample-provider-b</module>
+    <module>04-circuit-breaker/circuit-breaker-hystrix-consumer-resttemplate</module>
+    <module>04-circuit-breaker/circuit-breaker-hystrix-consumer-feign</module>
+    <module>04-circuit-breaker/circuit-breaker-monitor-hystrix-dashboard</module>
+    <module>04-circuit-breaker/circuit-breaker-monitor-hystrix-dashboard-turbine</module>
+    <module>05-routing/routing-sample-provider</module>
+    <module>05-routing/routing-zuul</module>
+    <module>05-routing/routing-spring-gateway</module>
+    <module>06-distributed-config/spring-config-server</module>
+    <module>06-distributed-config/using-spring-config</module>
+    <module>06-distributed-config/using-consul-as-config-center</module>
+    <module>06-distributed-config/using-nacos-as-config-center</module>
+    <module>07-tracing/tracing-sample-service-a</module>
+    <module>07-tracing/tracing-sample-service-b</module>
+    <module>07-tracing/tracing-sample-service-c</module>
+    <module>07-tracing/tracing-admin-server</module>
+    <module>distributed-lock/sample-distributed-lock</module>
+    <module>distributed-transaction/sample-seata-service-a</module>
+    <module>distributed-transaction/sample-seata-service-b</module>
+    <module>distributed-transaction/sample-seata-service-c</module>
+    <module>dubbo-spring/dubbo-sample-api</module>
+    <module>dubbo-spring/dubbo-simple-provider</module>
+    <module>dubbo-spring/dubbo-simple-consumer</module>
+    <module>dubbo-spring/dubbo-spring-provider2-none</module>
+    <module>dubbo-spring/dubbo-spring-provider2-mvc</module>
+    <module>dubbo-spring/dubbo-spring-consumer2</module>
+  </modules>
+
+</project>
