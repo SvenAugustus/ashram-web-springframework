@@ -1,4 +1,4 @@
-# springboot-bucket-pom
+# ashram-web-springframework
 [![Build Status](https://api.travis-ci.org/SvenAugustus/springboot-bucket-pom.svg?branch=master)](https://travis-ci.org/SvenAugustus/springboot-bucket-pom) [![License](https://img.shields.io/badge/license-Apache%202-4EB1BA.svg)](https://www.apache.org/licenses/LICENSE-2.0.html)
 
 ### Spring Boot 2 Bucket
