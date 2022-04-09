@@ -1,0 +1,21 @@
+<!DOCTYPE generatorConfiguration PUBLIC
+  "-//mybatis.org//DTD MyBatis Generator Configuration 1.0//EN"
+  "http://mybatis.org/dtd/mybatis-generator-config_1_0.dtd">
+<generatorConfiguration>
+  <context id="simple" targetRuntime="MyBatis3Simple">
+
+    <jdbcConnection driverClass="com.mysql.jdbc.Driver"
+      connectionURL="jdbc:mysql://localhost:3306/demo" userId="root" password="root123">
+    </jdbcConnection>
+
+    <javaModelGenerator targetPackage="xyz.flysium.dao.entity"
+      targetProject="src/main/java"/>
+
+    <javaClientGenerator type="ANNOTATEDMAPPER"
+      targetPackage="xyz.flysium.dao.repository"
+      targetProject="src/main/java"/>
+
+    <table tableName="emp"/>
+
+  </context>
+</generatorConfiguration>

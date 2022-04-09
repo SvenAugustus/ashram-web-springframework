@@ -1,0 +1,8 @@
+org.springframework.context.ApplicationListener=\
+    xyz.flysium.listeners.ApplicationStartingEventListener,\
+    xyz.flysium.listeners.ApplicationReadyEventListener,\
+    xyz.flysium.listeners.ApplicationPreparedEventListener,\
+    xyz.flysium.listeners.ApplicationStartedEventListener,\
+    xyz.flysium.listeners.ApplicationReadyEventListener,\
+    xyz.flysium.listeners.ApplicationFailedEventListener
+

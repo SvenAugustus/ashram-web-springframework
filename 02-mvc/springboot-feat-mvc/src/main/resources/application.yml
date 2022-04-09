@@ -1,9 +1,0 @@
-spring:
-  application:
-    name: spring-boot2-mvc
-
-# server
-server:
-#  port: 80
-  port: 8029
-

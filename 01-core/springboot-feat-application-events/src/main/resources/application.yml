@@ -1,9 +1,0 @@
-spring:
-  application:
-    name: spring-boot2-feat-application-events
-
-# server
-server:
-  port: 8235
-
-
