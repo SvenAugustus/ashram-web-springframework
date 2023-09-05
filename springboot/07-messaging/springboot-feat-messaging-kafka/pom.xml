@@ -31,7 +31,7 @@
 
   <properties>
     <maven.test.skip>true</maven.test.skip>
-    <kafka.version>2.3.1</kafka.version><!-- 对应 kafka 服务器版本 -->
+    <kafka.version>2.6.3</kafka.version><!-- 对应 kafka 服务器版本 -->
   </properties>
 
   <dependencies>
